@@ -9,33 +9,19 @@ getTotalX = function( a, b ){
 	var cont = 0
 	
 	for(var i = min; i <= max; i++ ){
-		for(var j = 0; j < all.length; j++){
-			cont = 0
-			
-			// debugando
-			console.log("TESTANDO COM => ", i)
-
-			console.log("all[j]: ", all[j])
-			console.log("i % all[j]", i % all[j])
-
-			if(i % all[j] == 0){
+		for(var j = 0; j <= all.length; j++){
+			if(i % all[j] == 0 || all[j] % i == 0){
 				cont++
 			}else {
 				break;
 			}
 		}
-		console.log(cont)
-		console.log()
-		console.log("PROXIMO")
-		console.log()
-
 		if(cont == all.length){
 			multiples.push(i)
 		}
+		cont = 0
 	}
-
-	console.log(multiples)
-
+	console.log(multiples.length)
 }
 
-getTotalX( [2,4], [16,32,96] )
+getTotalX( [2,4], [16,32, 96] )
