@@ -10,6 +10,7 @@ birthday = function(s, d, m){
 	var i = 0;
 	var mref = m
 	var flag = 0;
+	var conf = 0;
 
 	if( s.length == 1 ){
 		if(s[0] == d){
@@ -20,9 +21,10 @@ birthday = function(s, d, m){
 		while(i < s.length){
 
 			arr = s.slice(i,mref)
+			conf = arr.length-1
 			arr.map(el => {
 				aux+=el
-				if(aux == d && flag >= 1){
+				if(aux == d && flag == conf){
 					cont++
 				}
 				flag++;
@@ -31,6 +33,7 @@ birthday = function(s, d, m){
 			i++
 			mref = i + m
 			flag = 0;
+			conf = 0;
 		}
 
 		console.log(cont)
@@ -41,4 +44,4 @@ birthday = function(s, d, m){
 // birthday( [ 1, 2, 1, 3, 2 ], 3, 2)
 // birthday( [2,2], 4, 2)
 // birthday( [4], 4, 1)
-// birthday( [2, 5, 1, 3, 4 ,4, 3, 5, 1, 1, 2, 1, 4, 1, 3, 3, 4, 2, 1], 18, 7)
+birthday( [2, 5, 1, 3, 4 ,4, 3, 5, 1, 1, 2, 1, 4, 1, 3, 3, 4, 2, 1], 18, 7)

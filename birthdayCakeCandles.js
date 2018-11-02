@@ -5,7 +5,11 @@ birthdayCakeCandles = function( ar ){
     // Gerando Dados Grandes para o TestCase11
     mil = []
     for(var i = 0; i < 100000; i++){
-        mil.push(1000)
+        if(i == 899){
+            mil.push()
+        }else{
+            mil.push(1000)
+        }
     }
 
 
@@ -13,10 +17,10 @@ birthdayCakeCandles = function( ar ){
     var max = arr[arr.length-1]
     var cont = 0;
 
-    mil = mil.sort()
-    max = mil[mil.length-1]
+    // mil = mil.sort()
+    // max = mil[mil.length-1]
 
-    mil.map(el => {
+    arr.map(el => {
         if(max == el ){
             cont++
         }
@@ -24,4 +28,4 @@ birthdayCakeCandles = function( ar ){
     return cont
 }
 
-// console.log( birthdayCakeCandles( [3, 2, 1, 3] ) )
+console.log( birthdayCakeCandles( [3, 2, 1, 3] ) )
