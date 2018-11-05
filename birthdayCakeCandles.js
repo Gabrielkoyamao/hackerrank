@@ -1,31 +1,28 @@
 // Challenge https://www.hackerrank.com/challenges/birthday-cake-candles/problem
 
 birthdayCakeCandles = function( ar ){
+      
+    var i = 0;
+    var j = 0;
+    var cont = 0;
+    var maior = ar[0];
 
-    // Gerando Dados Grandes para o TestCase11
-    mil = []
-    for(var i = 0; i < 100000; i++){
-        if(i == 899){
-            mil.push()
-        }else{
-            mil.push(1000)
+    while(i < ar_count ){
+
+        if(maior < ar[i]){
+            maior = ar[i];
         }
+        i++;
     }
 
-
-    var arr = ar.sort();
-    var max = arr[arr.length-1]
-    var cont = 0;
-
-    // mil = mil.sort()
-    // max = mil[mil.length-1]
-
-    arr.map(el => {
-        if(max == el ){
-            cont++
+    while(j < ar_count){
+        if(maior == ar[j]){
+            cont++;
         }
-    })
-    return cont
+        j++;
+    }
+
+    return cont;
 }
 
-console.log( birthdayCakeCandles( [3, 2, 1, 3] ) )
+console.log(birthdayCakeCandles(4, [3,1,2,3]))
