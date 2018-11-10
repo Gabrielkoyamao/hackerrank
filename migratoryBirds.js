@@ -2,28 +2,28 @@
 
 migratoryBirds = function( arr ){
 
-	var rep = arr[0];
-	var cont = 0;
-	var i = 0;
+	var cont = 0
+	var aux = 0
+	var num = 0
 
-	arr.map(e => {
-
-
-		do{
-
-			if(e == rep){
+	for(var i = 0; i < arr.length; i++){
+		for(var j = 0; j < arr.length; j++){
+			if(arr[i] == arr[j]){
 				cont++
 			}
-			i++
-			if(i == arr.length - 1){
-				console.log('Type ' + e + ': ' + cont )
-				rep = e
+			if(cont > aux){
+				aux = cont
+				num = arr[i]
 			}
-		}while(i < arr.length)
-
-		cont = 0;
-		i = 0;
-	})
+			if((cont == aux) && (arr[i] != num)){
+				if(arr[i] < num){
+					num = arr[i]
+				}
+			}
+		}
+		cont = 0
+	}
+	console.log(num)
 }
 
 migratoryBirds( [1, 4, 4, 4, 5, 3] )
